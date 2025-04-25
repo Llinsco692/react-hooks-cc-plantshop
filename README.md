@@ -16,6 +16,18 @@ as well as persisting data to the backend via our API.
 Your job will be to make our app work according to the user stories you will
 find the [Core Deliverables](#Core-Deliverables) section.
 
+### Testing Notes
+
+- When testing, ensure that any state updates caused by events or API calls are wrapped in `act(...)` to avoid warnings. For example:
+
+```javascript
+act(() => {
+  /* trigger state updates */
+});
+```
+
+- Ensure that price formatting in your components matches the expected format (e.g., `$15.99`).
+
 ## Setup
 
 1. Run `npm install` in your terminal.
@@ -34,6 +46,7 @@ The base URL for your backend is: `http://localhost:6001`
 As a user:
 
 1. When the app starts, I can see all plants.
+   - Prices should be displayed with a `$` prefix (e.g., `$15.99`).
 2. I can add a new plant to the page by submitting the form.
 3. I can mark a plant as "sold out".
 4. I can search for plants by their name and see a filtered list of plants.
